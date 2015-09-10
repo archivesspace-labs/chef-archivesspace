@@ -103,12 +103,10 @@ template "#{aspace_path}/config/config.rb" do
 end
 
 # seed the database if mysql
-unless node['archivesspace']['db']['embedded']
-  bash "archivesspace-seed-database" do
-    user node["archivesspace"]["user"]["name"]
-    cwd  "#{aspace_path}/scripts"
-    code "./setup-database.sh"
-  end
+bash "archivesspace-seed-database" do
+  user node["archivesspace"]["user"]["name"]
+  cwd  "#{aspace_path}/scripts"
+  code "./setup-database.sh"
 end
 
 link "/etc/init.d/archivesspace" do
