@@ -48,6 +48,12 @@ execute "set-archivesspace-java_xmx" do
   command "sed -i '/ASPACE_JAVA_XMX=/c ASPACE_JAVA_XMX=\"-Xmx#{node['archivesspace']['java_xmx']}m\"' #{aspace_path}/archivesspace.sh"
 end
 
+execute "set-archivesspace-demo-mode" do
+  if node["archivesspace"]["demo_mode"] 
+    command "sed -i 'export ASPACE_DEMO=true\' #{aspace_path}/archivesspace.sh"
+  end
+end
+
 remote_file "#{aspace_path}/lib/mysql-connector-java-#{node['archivesspace']['mysql_lib']}.jar" do
   source "#{node['archivesspace']['mysql_url']}/#{node['archivesspace']['mysql_lib']}/mysql-connector-java-#{node['archivesspace']['mysql_lib']}.jar" 
   mode "0644"
