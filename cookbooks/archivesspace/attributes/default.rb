@@ -5,7 +5,7 @@ default['java']['oracle']['accept_oracle_download_terms'] = true
 # General ArchivesSpace settings
 default['archivesspace']['demo_mode'] = true
 
-default['archivesspace']['version']           = "1.3.0"
+default['archivesspace']['version']           = "1.4.1"
 default['archivesspace']['url']               = "https://github.com/archivesspace/archivesspace/releases/download"
 default['archivesspace']['mysql_url']         = "http://repo1.maven.org/maven2/mysql/mysql-connector-java"
 default['archivesspace']['mysql_lib']         = "5.1.24"
