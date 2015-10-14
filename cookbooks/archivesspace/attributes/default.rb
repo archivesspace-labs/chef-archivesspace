@@ -35,8 +35,8 @@ default['archivesspace']['backend_url']       = "8089"
 default['archivesspace']['frontend_url']      = "8080"
 default['archivesspace']['solr_url']          = "8090"
 default['archivesspace']['public_url']        = "8081"
-default['archivesspace']['user_registration'] = false
-default['archivesspace']['help_enabled']      = false
+default['archivesspace']['user_registration'] = true
+default['archivesspace']['help_enabled']      = true
 
 # Proxy settings -- apply only if proxy use is true
 default['archivesspace']['proxy']['enabled']               = false
